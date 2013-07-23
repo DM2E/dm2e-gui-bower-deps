@@ -23,11 +23,19 @@ keep() {
     done
 }
 
+# dist stuff
+rm -r $VENDOR_DIR/**/.bowerrc
+rm -r $VENDOR_DIR/**/.*.json
+rm -r $VENDOR_DIR/**/*.json
+
 # git dirs
 rm -r $VENDOR_DIR/**/.git
 
 # docs dirs
 rm -r $VENDOR_DIR/**/docs
+
+# example dirs
+rm -r $VENDOR_DIR/**/examples
 
 # remove jquery ui themes
 rm -r $VENDOR_DIR/jquery-ui/themes/
@@ -35,9 +43,10 @@ rm -r $VENDOR_DIR/jquery-ui/themes/
 # RequireJS
 rm -r $VENDOR_DIR/requirejs/dist/
 rm -r $VENDOR_DIR/requirejs/test
+rm -r $VENDOR_DIR/requirejs/tests
 
 # less
 keep $VENDOR_DIR/less.js lib
 
 # bootswatch
-keep $VENDOR_DIR/bootswatch cerulean cyborg
+keep $VENDOR_DIR/bootswatch cerulean cyborg img
