@@ -7,7 +7,7 @@ VENDOR_DIR=$BASE_DIR/vendor
 keep() {
     dir=$1
     to_keep=${@:2}
-    for i in $1/*;do
+    for i in $1/{.*,*};do
         matchflag=false
         for pat in ${to_keep[@]};do
             if [[ "$i" =~ "$pat" ]];then
@@ -41,3 +41,7 @@ keep $VENDOR_DIR/less.js lib
 
 # bootswatch
 keep $VENDOR_DIR/bootswatch cerulean cyborg
+
+# humane-date
+keep $VENDOR_DIR/humane-dates humane.js
+
