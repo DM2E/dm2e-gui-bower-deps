@@ -256,7 +256,7 @@
 
   //EXPORTS
   //CommonJS
-  if (typeof require == 'function' && typeof module !== 'undefined' && exports) {
+  if (typeof require == 'function' && typeof module !== 'undefined' && typeof exports !== 'undefined') {
     module.exports = Modal;
   }
 
@@ -264,7 +264,7 @@
   if (typeof define === 'function' && define.amd) {
     return define(function() {
       Backbone.BootstrapModal = Modal;
-    })
+    });
   }
 
   //Regular; add to Backbone.Bootstrap.Modal
