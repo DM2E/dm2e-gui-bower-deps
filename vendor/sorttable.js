@@ -19,6 +19,9 @@
 var stIsIE = /*@cc_on!@*/false;
 
 sorttable = {
+
+  DATE_RE: /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/,
+
   init: function() {
     // quit if this function has already been called
     if (arguments.callee.done) return;
@@ -29,7 +32,7 @@ sorttable = {
 
     if (!document.createElement || !document.getElementsByTagName) return;
 
-    sorttable.DATE_RE = /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/;
+    // sorttable.DATE_RE = /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/;
 
     forEach(document.getElementsByTagName('table'), function(table) {
       if (table.className.search(/\bsortable\b/) != -1) {
